@@ -3,7 +3,7 @@ Your Transactions Has Been Confirmed
 
 Hi, {{ $checkout->User->name }}
 <br>
-Your Transaction has been confirmed, now you can enjoy the benefits of <b>{{ $checkout->Camp->title }}</b>camp.
+Your Transaction has been confirmed, now you can enjoy the benefits of <b>{{ $checkout->Camp->title }}</b> camp.
 
 @component('mail::button', ['url' => route('user.dashboard')])
 My Dashboard
