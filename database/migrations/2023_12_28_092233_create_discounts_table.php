@@ -18,7 +18,7 @@ class CreateDiscountsTable extends Migration
             $table->string('name', 100);
             $table->string('code', 5)->unique();
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('percentage');
+            $table->unsignedInteger('percentage');
             $table->timestamps();
             $table->softDeletes();
         });
