@@ -34,11 +34,12 @@
                             <strong>$ {{ $items->Camp->price }}k</strong>
                         </td>
                         <td>
-                           @if ($items->is_paid)
-                                <strong class="text-success">Payment Success</strong>
-                           @else 
-                                <strong>Waiting for Payment</strong>
-                           @endif
+                           <strong>{{ $items->payment_status }}</strong>
+                        </td>
+                        <td>
+                            @if ($items->payment_status == 'waiting')
+                                <a href="{{ $items->midtrans_url }}" class="btn btn-primary">Pay Here</a>
+                            @endif
                         </td>
                         <td>
                             <a href="https://wa.me/081389894776?text=Hi, Saya ingin bertanya tentang kelas {{ $items->Camp->title }}" class="btn btn-primary">
@@ -48,7 +49,7 @@
                     </tr>
                     @empty
                         <tr>
-                            <td colspan="5"><h3>No data</h3></td>
+                            <td colspan="5"><h3>No Camp Register</h3></td>
                         </tr> 
                     @endforelse                   
                 </tbody>
