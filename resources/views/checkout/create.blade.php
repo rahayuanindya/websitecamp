@@ -74,8 +74,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label for="exampleInputEmail1" class="form-label">Discount Code</label>
-                                    <input name="discount" type="text" class="form-control {{ $errors->has('discount') ? 'is-invalid' : ''  }}" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ old('discount') }}" required>
+                                    <input name="discount" type="text" class="form-control {{ $errors->has('discount') ? 'is-invalid' : ''  }}" value="{{ old('discount') }}">
                                         @if ($errors->has('discount'))
                                             <p class="text-danger">{{ $errors->first('discount') }}</p>
                                         @endif

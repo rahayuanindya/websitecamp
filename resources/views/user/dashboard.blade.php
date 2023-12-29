@@ -31,7 +31,11 @@
                             </p>
                         </td>
                         <td>
-                            <strong>$ {{ $items->Camp->price }}k</strong>
+                            <strong>{{ $items->total }}
+                            @if ($items->discount_id)
+                                <span class="badge bg-success">Disc {{ $items->discount_percentage }}%</span>
+                            @endif
+                            </strong>
                         </td>
                         <td>
                            <strong>{{ $items->payment_status }}</strong>
